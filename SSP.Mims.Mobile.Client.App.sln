@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App.UWP", "SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.UWP\SSP.Mims.Mobile.Client.App.UWP.csproj", "{D413E3CB-7259-4ECA-B63C-038170EE7DF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App.UWP", "src\SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.UWP\SSP.Mims.Mobile.Client.App.UWP.csproj", "{D413E3CB-7259-4ECA-B63C-038170EE7DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App.Android", "SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.Android\SSP.Mims.Mobile.Client.App.Android.csproj", "{E1ABC114-1007-46FD-9DAA-900CA36E2AB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App.Android", "src\SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.Android\SSP.Mims.Mobile.Client.App.Android.csproj", "{E1ABC114-1007-46FD-9DAA-900CA36E2AB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App.iOS", "SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.iOS\SSP.Mims.Mobile.Client.App.iOS.csproj", "{E9FB2E3C-310B-4D01-A283-AE687BC4323E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App.iOS", "src\SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.iOS\SSP.Mims.Mobile.Client.App.iOS.csproj", "{E9FB2E3C-310B-4D01-A283-AE687BC4323E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App", "SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.csproj", "{A25AD3F1-16B4-4462-BCC3-1CBA03867BD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSP.Mims.Mobile.Client.App", "src\SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App\SSP.Mims.Mobile.Client.App.csproj", "{A25AD3F1-16B4-4462-BCC3-1CBA03867BD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{4DB2730A-6E38-4079-AE78-900E07435B9A}"
 EndProject
