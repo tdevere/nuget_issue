@@ -1,0 +1,152 @@
+<Project>
+	<Target Name="CopyPackage" AfterTargets="Pack" Condition="('$(Configuration)' != 'Debug' And ('$(OutputType)' != 'Exe' Or '$(OutputType)' != 'WinExe'))">
+		<Copy SourceFiles="$(OutputPath)$(PackageId).$(NuGetVersion).nupkg" DestinationFolder="$(SolutionDir)nuget" Condition="Exists('$(OutputPath)$(PackageId).$(NuGetVersion).nupkg')"/>
+	</Target>
+	<Target Name="CopyPackageUpOneDirectory" AfterTargets="Pack" Condition="('$(Configuration)' != 'Debug' And ('$(OutputType)' != 'Exe' Or '$(OutputType)' != 'WinExe'))">
+		<Copy SourceFiles="$(OutputPath)..\$(PackageId).$(NuGetVersion).nupkg" DestinationFolder="$(SolutionDir)nuget" Condition="Exists('$(OutputPath)..\$(PackageId).$(NuGetVersion).nupkg')"/>
+	</Target>
+
+	<PropertyGroup>
+		<SignAssembly>true</SignAssembly>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<AssemblyVersion>20.0.0.1</AssemblyVersion>
+		<FileVersion>20.0.0.167</FileVersion>
+		<Version>20.0.0.167</Version>
+		<GitCommitHash>abcdef</GitCommitHash>
+		<NuGetVersion>20.0.0.167</NuGetVersion>
+		<PackageVersion>$(NuGetVersion)</PackageVersion>
+		<InformationalVersion>$(NuGetVersion)+$(GitCommitHash)</InformationalVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release' Or '$(Configuration)' == 'AutomatedRelease'">
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<SignAssembly>false</SignAssembly>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<AssemblyVersion>20.0.0.1</AssemblyVersion>
+		<FileVersion>20.0.0.167</FileVersion>
+		<Version>20.0.0.167</Version>
+		<GitCommitHash>abcdef</GitCommitHash>
+		<NuGetVersion>20.0.0.167</NuGetVersion>
+		<PackageVersion>$(NuGetVersion)</PackageVersion>
+		<InformationalVersion>$(NuGetVersion)+$(GitCommitHash)</InformationalVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="SSP Packages">
+		<TCTBuildAddInsPackageVersion>1.0.0.6666</TCTBuildAddInsPackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Third Party Packages">
+		<AvalonEditPackageVersion>5.0.4</AvalonEditPackageVersion>
+		<CastleCorePackageVersion>4.4.1</CastleCorePackageVersion>
+		<CommandLineParserPackageVersion>2.5.0</CommandLineParserPackageVersion>
+		<CommonLoggingPackageVersion>3.4.1</CommonLoggingPackageVersion>
+		<ExtendedWpfToolkitPackageVersion>3.2.0</ExtendedWpfToolkitPackageVersion>
+		<MahAppsMetroResourcesPackageVersion>0.6.1</MahAppsMetroResourcesPackageVersion>
+		<MahAppsMetroPackageVersion>1.5.0</MahAppsMetroPackageVersion>
+		<MonoCecilPackageVersion>0.9.6.4</MonoCecilPackageVersion>
+		<MvvmLightLibsPackageVersion>5.4.1.1</MvvmLightLibsPackageVersion>
+		<MvvmLightLibsStdPackageVersion>5.4.1.1</MvvmLightLibsStdPackageVersion>
+		<NewtonsoftJsonPackageVersion>13.0.1</NewtonsoftJsonPackageVersion>
+		<NinjectPackageVersion>3.3.4</NinjectPackageVersion>
+		<NinjectExtensionsConventionsPackageVersion>3.3.0</NinjectExtensionsConventionsPackageVersion>
+		<NinjectExtensionsFactoryPackageVersion>3.3.2</NinjectExtensionsFactoryPackageVersion>
+		<NinjectExtensionsNamedScopePackageVersion>3.3.0</NinjectExtensionsNamedScopePackageVersion>
+		<NugetCommandLinePackageVersion>5.1.0</NugetCommandLinePackageVersion>
+		<QuartzPackageVersion>3.2.1</QuartzPackageVersion>
+		<RgPluginsPopupPackageVersion>2.0.0.11</RgPluginsPopupPackageVersion>
+		<SharpCompressPackageVersion>0.18.1</SharpCompressPackageVersion>
+		<SharpZipLibPackageVersion>1.3.1</SharpZipLibPackageVersion>
+		<SkiaSharp>2.80.2</SkiaSharp>
+		<SplatPackageVersion>2.0.0</SplatPackageVersion>
+		<SquirrelPackageVersion>1.7.8</SquirrelPackageVersion>
+		<ToastinetPackageVersion>2.8.0</ToastinetPackageVersion>
+		<ToggleSwitchPackageVersion>1.1.2</ToggleSwitchPackageVersion>
+		<ExtendedWpfToolkitPackageVersion>3.5.0</ExtendedWpfToolkitPackageVersion>
+		<WpfCapPackageVersion>1.0.0</WpfCapPackageVersion>
+		<XamarinFFImageLoadingPackageVersion>2.4.11.982</XamarinFFImageLoadingPackageVersion>
+		<XamarinFFImageLoadingFormsPackageVersion>2.4.11.982</XamarinFFImageLoadingFormsPackageVersion>
+		<XamarinFormsPancakeViewPackageVersion>2.3.0.759</XamarinFormsPancakeViewPackageVersion>
+		<XamanimationPackageVersion>1.3.0</XamanimationPackageVersion>
+		<SqliteNetPclPacakgeVersion>1.7.335</SqliteNetPclPacakgeVersion>
+		<SqlitePclRawGreenPackageVersion>2.0.4</SqlitePclRawGreenPackageVersion>
+		<SQLiteNetExtensionsPackageVersion>2.1.0</SQLiteNetExtensionsPackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="SSP-Hosted Infragistics">
+		<InfragisticsWPF4PackageVersion>16.1.20161</InfragisticsWPF4PackageVersion>
+		<InfragisticsDataManagerPackageVersion>16.1.20161</InfragisticsDataManagerPackageVersion>
+		<InfragisticsDataPresenterPackageVersion>16.1.20161</InfragisticsDataPresenterPackageVersion>
+		<InfragisticsDragDropPackageVersion>16.1.20161</InfragisticsDragDropPackageVersion>
+		<InfragisticsEditorsPackageVersion>16.1.20161</InfragisticsEditorsPackageVersion>
+		<InfragisticsRibbonPackageVersion>16.1.20161</InfragisticsRibbonPackageVersion>
+		<InfragisticsXamGridPackageVersion>16.1.20161</InfragisticsXamGridPackageVersion>
+		<InfragisticsXamDataTreePackageVersion>16.1.20161</InfragisticsXamDataTreePackageVersion>
+		<InfragisticsXamDialogWindowPackageVersion>16.1.20161</InfragisticsXamDialogWindowPackageVersion>
+		<InfragisticsXamMaskedInputPackageVersion>16.1.20161</InfragisticsXamMaskedInputPackageVersion>
+		<InfragisticsXamMenuPackageVersion>16.1.20161</InfragisticsXamMenuPackageVersion>
+		<InfragisticsXamCalendarPackageVersion>16.1.20161</InfragisticsXamCalendarPackageVersion>
+		<InfragisticsXamDateTimeInputPackageVersion>16.1.20161</InfragisticsXamDateTimeInputPackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="SSP-Hosted PDF4NET">
+		<O2SComponentsPDF4NETNETPackageVersion>10.4.2.1</O2SComponentsPDF4NETNETPackageVersion>
+	</PropertyGroup>
+	
+	<PropertyGroup Label="Microsoft Packages">
+		<SystemRuntimeCachingPackageVersion>5.0.0</SystemRuntimeCachingPackageVersion>
+		<SystemConfigurationConfigurationManagerPackageVersion>5.0.0</SystemConfigurationConfigurationManagerPackageVersion>
+		<MicrosoftDataSqlitePackageVersion>5.0.4</MicrosoftDataSqlitePackageVersion>
+		<EntityFramework6PackageVersion>6.4.4</EntityFramework6PackageVersion>
+		<MicrosoftAppCenterAnalyticsPackageVersion>4.2.0</MicrosoftAppCenterAnalyticsPackageVersion>
+		<MicrosoftAppCenterCrashesPackageVersion>4.2.0</MicrosoftAppCenterCrashesPackageVersion>
+		<MicrosoftAspNetWebApiClientPackageVersion>5.2.7</MicrosoftAspNetWebApiClientPackageVersion>
+		<MicrosoftEntityFrameworkCorePackageVersion>3.1.7</MicrosoftEntityFrameworkCorePackageVersion>
+		<MicrosoftEntityFrameworkCoreRelationalPackageVersion>3.1.7</MicrosoftEntityFrameworkCoreRelationalPackageVersion>
+		<MicrosoftEntityFrameworkCoreSqlServerPackageVersion>3.1.7</MicrosoftEntityFrameworkCoreSqlServerPackageVersion>
+		<MicrosoftEntityFrameworkCoreSqlitePackageVersion>3.1.7</MicrosoftEntityFrameworkCoreSqlitePackageVersion>
+		<MicrosoftWin32RegistryPackageVersion>5.0.0</MicrosoftWin32RegistryPackageVersion>
+		<StyleCopAnalyzersPackageVersion>1.1.118</StyleCopAnalyzersPackageVersion>
+		<SystemComponentModelAnnotationsPackageVersion>5.0.0</SystemComponentModelAnnotationsPackageVersion>
+		<SystemDrawingCommonPackageVersion>5.0.2</SystemDrawingCommonPackageVersion>
+		<SystemIOPortsPackageVersion>5.0.1</SystemIOPortsPackageVersion>
+		<SystemServiceModelSecurityPackageVersion>4.8.1</SystemServiceModelSecurityPackageVersion>
+		<XamarinFormsPackageVersion>5.0.0.2012</XamarinFormsPackageVersion>
+		<XamarinCommunityToolkitPackageVersion>1.1.0</XamarinCommunityToolkitPackageVersion>
+		<XamarinEssentialsPackageVersion>1.6.1</XamarinEssentialsPackageVersion>
+		<XamarinAndroidXConstraintLayoutPackageVersion>2.0.4.1</XamarinAndroidXConstraintLayoutPackageVersion>
+    <XamTabViewPackageVersion>1.0.5</XamTabViewPackageVersion>
+    <XamPluginConnectivity>3.2.0</XamPluginConnectivity>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Logging Packages">
+		<Log4NetPackageVersion>2.0.12</Log4NetPackageVersion>
+		<NLogPackageVersion>4.7.8</NLogPackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Database Packages">
+		<DevartDataPackageVersion>5.0.1878</DevartDataPackageVersion>
+		<DevartDataOraclePackageVersion>9.5.454</DevartDataOraclePackageVersion>
+		<DevartDataOracleEF6PackageVersion>9.5.454</DevartDataOracleEF6PackageVersion>
+		<DevartDataSQLitePackageVersion>5.17.1836</DevartDataSQLitePackageVersion>
+		<DevartDataSQLiteEF1PackageVersion>5.15.1696</DevartDataSQLiteEF1PackageVersion>
+		<DevartDataSQLiteEF6PackageVersion>5.15.1696</DevartDataSQLiteEF6PackageVersion>
+		<DevartDataOracleEFCorePackageVersion>9.14.1204</DevartDataOracleEFCorePackageVersion>
+		<DevartDataSQLiteEFCorePackageVersion>5.15.1696</DevartDataSQLiteEFCorePackageVersion>
+		<MicrosoftDataSqlitePackageVersion>5.0.4</MicrosoftDataSqlitePackageVersion>
+		<MicrosoftDataSqlServerPackageVersion>1.1.2</MicrosoftDataSqlServerPackageVersion>
+		<SystemDataSqliteCorePackageVersion>1.0.112</SystemDataSqliteCorePackageVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Label="ESRI Packages">
+		<ArcGISRuntimeUwpPackageVersion>100.10.0</ArcGISRuntimeUwpPackageVersion>
+		<ArcGISProCorePackageVersion>2.6.0</ArcGISProCorePackageVersion>
+		<ArcGISProCoreHostPackageVersion>2.6.0</ArcGISProCoreHostPackageVersion>
+		<ArcGISRuntimePackageVersion>100.10.0</ArcGISRuntimePackageVersion>
+		<ArcGISRuntimeToolkitPackageVersion>100.10.0</ArcGISRuntimeToolkitPackageVersion>
+		<ArcGISRuntimeXamarinFormsPackageVersion>100.10.0</ArcGISRuntimeXamarinFormsPackageVersion>
+		<ArcGISRuntimeToolkitXamarinFormsPackageVersion>100.10.0</ArcGISRuntimeToolkitXamarinFormsPackageVersion>
+	</PropertyGroup>
+</Project>
